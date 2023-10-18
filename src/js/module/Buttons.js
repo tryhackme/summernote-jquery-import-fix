@@ -67,12 +67,20 @@ export default class Buttons {
   }
 
   colorPalette(className, tooltip, backColor, foreColor) {
+    const fontIconOption = this.options.icons.font;
+    let classNameInjectedFontIconOption;
+    // if string is html icon element or a class name
+    if (/(<([^>]+)>)/i.test(fontIconOption)) {
+      classNameInjectedFontIconOption = $(fontIconOption).addClass('note-recent-color')[0].outerHTML;
+    } else {
+      classNameInjectedFontIconOption = fontIconOption + ' note-recent-color';
+    }
     return this.ui.buttonGroup({
       className: 'note-color ' + className,
       children: [
         this.button({
           className: 'note-current-color-button',
-          contents: this.ui.icon(this.options.icons.font + ' note-recent-color'),
+          contents: this.ui.icon(classNameInjectedFontIconOption),
           tooltip: tooltip,
           click: (e) => {
             const $button = $(e.currentTarget);
