@@ -1,7 +1,7 @@
 {
-  "name": "summernote",
+  "name": "@tryhackme/summernote-patched",
   "description": "Super simple WYSIWYG editor",
-  "version": "0.8.20",
+  "version": "0.8.20-patched",
   "license": "MIT",
   "keywords": [
     "editor",
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/summernote/summernote.git"
+    "url": "https://github.com/tryhackme/summernote-patched.git"
   },
   "author": {
     "name": "hackerwins",
